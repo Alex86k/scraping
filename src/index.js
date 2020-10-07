@@ -67,9 +67,10 @@ const Json2csv = require('json2csv').Parser;
     }
     const j2csv = new Json2csv(['Brand', 'Model', 'Reference number', 'Case size']);
     const csv = j2csv.parse(result);
+    fs.writeFileSync('./result.csv', csv, 'utf-8')
 
     await browser.close();
 
-    fs.writeFileSync('./result.csv', csv, 'utf-8')
+
 
 })();
